@@ -3012,6 +3012,7 @@ a.bg-black:hover,a.bg-black:focus,button.bg-black:hover,button.bg-black:focus{ba
 @media (max-width: 991.98px) {
 .bg-md-cover{background-image:none!important}
 .container{width:100%}
+.navbar{margin-top: 1.5rem;}
 }
 .bg-size--cover{background:no-repeat center center/cover}
 .bg-size--contain{background-size:contain}
