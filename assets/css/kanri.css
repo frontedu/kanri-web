@@ -33376,6 +33376,10 @@ button.bg-black:focus
         background-image: none !important;
 
     }
+    .container
+    {
+        width: 100%;
+    }
 
 }
 
