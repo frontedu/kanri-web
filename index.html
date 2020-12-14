@@ -1,367 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Kanri - Gestão em um toque</title>
-    <meta name="Description" content="O Kanri® é um assistente virtual (Chatbot) que transforma o fluxo de caixa de um pequeno empreendedor em algo fácil e objetivo." />
+    <title>Kanri - Gestão em um toque
+    </title>
+    <meta name="Description" content="O Kanri é um assistente virtual (Chatbot) que transforma o fluxo de caixa de um pequeno empreendedor em algo fácil e objetivo." />
     <!-- Favicon -->
     <link rel="icon" href="assets/img/brand/favicon.png" type="image/png">
     <link rel="stylesheet" href="assets/libs/@fortawesome/fontawesome-free/css/minify.css">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/kanri.css" id="stylesheet">
-</head>
-
-<style>
-    @keyframes hidePreloader {
-            0% {
-                width: 100%;
-                height: 100%;
-            }
-
-            100% {
-                width: 0;
-                height: 0;
-            }
+    <style>
+      @keyframes hidePreloader {
+        0% {
+          width: 100%;
+          height: 100%;
         }
-
-        body>div.preloader {
-            position: fixed;
-            background: white;
-            width: 100%;
-            height: 100%;
-            z-index: 1071;
-            opacity: 0;
-            transition: opacity .5s ease;
-            overflow: hidden;
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        100% {
+          width: 0;
+          height: 0;
         }
-
-        body:not(.loaded)>div.preloader {
-            opacity: 1;
+      }
+      body>div.preloader {
+        position: fixed;
+        background: white;
+        width: 100%;
+        height: 100%;
+        z-index: 1071;
+        opacity: 0;
+        transition: opacity .5s ease;
+        overflow: hidden;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      body:not(.loaded)>div.preloader {
+        opacity: 1;
+      }
+      body:not(.loaded) {
+        overflow: hidden;
+      }
+      body.loaded>div.preloader {
+        animation: hidePreloader .5s linear .5s forwards;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", function() {
+        setTimeout(function() {
+          document.querySelector('body').classList.add('loaded');
         }
-
-        body:not(.loaded) {
-            overflow: hidden;
-        }
-
-        body.loaded>div.preloader {
-            animation: hidePreloader .5s linear .5s forwards;
-        }
-</style>
-<script>
-    window.addEventListener("load", function() {
-            setTimeout(function() {
-                document.querySelector('body').classList.add('loaded');
-            }, 300);
-        });
-</script>
-
-
-<body>
+                   , 300);
+      }
+                             );
+    </script>
+  </head>
+  <body>
     <!-- Preloader -->
     <div class="preloader">
-        <div class="spinner-border text-primary" role="status">
-            <span class="sr-only">Carregando...</span>
-        </div>
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Carregando...
+        </span>
+      </div>
     </div>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container">
-            <!-- Brand -->
-            <a class="navbar-brand" href="/">
-                <img alt="Image placeholder" src="assets/img/brand/logo.svg" id="navbar-logo">
-            </a>
-            <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Collapse -->
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" target="_blank" href="https://abre.ai/kanridoc/">Documentação</a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" 
-                        aria-expanded="false">Envolva-se</a>
-                        <div class="dropdown-menu dropdown-menu-single">
-                            <a href="https://abre.ai/kanriweb/" target="_blank" class="dropdown-item">Web</a>
-                            <a href="http://t.me/kanribot/" target="_blank" class="dropdown-item">Telegram</a>
-                            <a href="https://m.me/kanribot/" target="_blank" class="dropdown-item">Messenger</a>
-                            <a href="#" class="dropdown-item">WhatsApp</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="mailto:kanri@frontedu.me">Contato</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/">
+          <img alt="Image placeholder" src="assets/img/brand/logo.svg" id="navbar-logo">
+        </a>
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">
+          </span>
+        </button>
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" target="_blank" href="https://abre.ai/kanridoc/">Documentação
+              </a>
+            </li>
+            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" 
+                 aria-expanded="false">Envolva-se
+              </a>
+              <div class="dropdown-menu dropdown-menu-single">
+                <a href="https://abre.ai/kanriweb/" target="_blank" class="dropdown-item">Web
+                </a>
+                <a href="http://t.me/kanribot/" target="_blank" class="dropdown-item">Telegram
+                </a>
+                <a href="https://m.me/kanribot/" target="_blank" class="dropdown-item">Messenger
+                </a>
+                <a href="#" class="dropdown-item">WhatsApp
+                </a>
+                </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="mailto:kanri@frontedu.me">Contato
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
     <!-- Main content -->
     <section class="slice-main py-main">
-        <div class="container">
-            <div class="row row-grid align-items-center">
-                </div>
-            </div>
+      <div class="container">
+        <div class="row row-grid align-items-center">
         </div>
+      </div>
+      </div>
     </section>
-    <section class="slice slice-main pb-footer" id="ajuda"></section>
-
-        <section class="slice slice-lg pt-lg-inter pb-0 pb-lg-6">
-            <div class="container">
-                <!-- Title -->
-                <!-- Section title -->
-                <div class="row mb-5 justify-content-center">
-                    <div class="col-lg-6">
-                        <span class="badge badge-soft-success badge-pill badge-lg">
-                        Você não precisa mais abrir seu Excel
-                    </span>
-                        <h2 class=" mt-4">Gestão de fluxo de caixa diretamente pelo seu aplicativo de mensagem
-                        </h2>
-                        <div class="mt-2">
-                            <p class="lead lh-180">Nosso assistente virtual cuida das suas planilhas enquanto você faz o que realmente importa. Tudo isso sem pagar nada</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card -->
-                <div class="row mt-5">
-                    <div class="col-md-4">
-                        <div class="card border-0 bg-soft-danger">
-                            <div class="card-body pb-5">
-                                <div class="pt-4 pb-5">
-                                    <img src="assets/img/svg/illustrations/explica1.svg" class="img-fluid img-center" style="height: 200px;" alt="Illustration" />
-                                </div>
-                                <h5 class="h4 lh-130 text-dark mb-3">De graça pra sempre</h5>
-                                <p class="text-dark opacity-6 mb-0">A gente te ajuda com estoque, contas a receber e a pagar de forma gratuita, e se quiser, oferecemos soluções para salários, receita e diversas outras.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card border-0 bg-soft-success">
-                            <div class="card-body pb-5">
-                                <div class="pt-4 pb-5">
-                                    <img src="assets/img/svg/illustrations/explica2.svg" class="img-fluid img-center" style="height: 200px;" alt="Illustration" />
-                                </div>
-                                <h5 class="h4 lh-130 text-dark mb-3">Quando e onde quiser</h5>
-                                <p class="text-dark opacity-6 mb-0">Independente do lugar e dispositivo que você estiver, nosso assistente virtual te ajudará a consultar seu fluxo de caixa de forma objetiva e fácil.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card border-0 bg-soft-warning">
-                            <div class="card-body pb-5">
-                                <div class="pt-4 pb-5">
-                                    <img src="assets/img/svg/illustrations/explica3.svg" class="img-fluid img-center" style="height: 200px;" alt="Illustration" />
-                                </div>
-                                <h5 class="h4 lh-130 text-dark mb-3">A gente te lembra</h5>
-                                <p class="text-dark opacity-6 mb-0">Enquanto você faz o que realmente importa a gente se encarrega de tratar seus dados e lhe avisar sempre que haver uma data limite ou ocorrências.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <section class="slice slice-main pb-footer" id="ajuda">
+  </section>
+  <section class="slice slice-lg pt-lg-inter pb-0 pb-lg-6">
+    <div class="container">
+      <!-- Title -->
+      <!-- Section title -->
+      <div class="row mb-5 justify-content-center">
+        <div class="col-lg-6">
+          <span class="badge badge-soft-success badge-pill badge-lg">
+            Você não precisa mais abrir seu Excel
+          </span>
+          <h2 class=" mt-4">Gestão de fluxo de caixa diretamente pelo seu aplicativo de mensagem
+          </h2>
+          <div class="mt-2">
+            <p class="lead lh-180">Nosso assistente virtual cuida das suas planilhas enquanto você faz o que realmente importa. Tudo isso sem pagar nada
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="row mt-5">
+        <div class="col-md-4">
+          <div class="card border-0 bg-soft-danger">
+            <div class="card-body pb-5">
+              <div class="pt-4 pb-5">
+                <img src="assets/img/svg/illustrations/explica1.svg" class="img-fluid img-center" style="height: 200px;" alt="Illustration" />
+              </div>
+              <h5 class="h4 lh-130 text-dark mb-3">De graça pra sempre
+              </h5>
+              <p class="text-dark opacity-6 mb-0">A gente te ajuda com estoque, contas a receber e a pagar de forma gratuita, e se quiser, oferecemos soluções para salários, receita e diversas outras.
+              </p>
             </div>
-        </section>
-
-        <section class="slice slice-lg bg-section-dark pt-5 pt-lg-8" id="ajudar">
-            <!-- Container -->
-            <div class="container position-relative zindex-100">
-                <div class="col">
-                    <div class="row justify-content-center">
-                        <div class="col-md-10 text-center">
-                            <div class="mt-4 mb-6">
-                                <h2 class="h1 text-white">
-                                Chega de apenas falar
-                                </h2>
-                                <h4 class="text-white mt-3">Acesse agora a solução e mude a forma que você enxerga suas antigas planilhas.</h4>
-                                <!-- Play button -->
-                                <a href="https://youtu.be/hnM-kfOfDsM" target="blank" class="btn btn-warning btn-icon hover-translate-y-n10 mt-4">
-                                    <span class="btn-inner--icon">
-                                    <i data-feather="play"></i>
-                                </span>
-                                    <span class="btn-inner--text">Demonstração</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 bg-soft-success">
+            <div class="card-body pb-5">
+              <div class="pt-4 pb-5">
+                <img src="assets/img/svg/illustrations/explica2.svg" class="img-fluid img-center" style="height: 200px;" alt="Illustration" />
+              </div>
+              <h5 class="h4 lh-130 text-dark mb-3">Quando e onde quiser
+              </h5>
+              <p class="text-dark opacity-6 mb-0">Independente do lugar e dispositivo que você estiver, nosso assistente virtual te ajudará a consultar seu fluxo de caixa de forma objetiva e fácil.
+              </p>
             </div>
-        </section>
-        <section class="slice pt-0">
-            <div class="container position-relative zindex-100">
-                <div class="row">
-
-                    <div class="col-xl-4 col-sm-6 mt-n7">
-                        <a href="https://abre.ai/kanriweb/" target="_blank">
-                            <div class="card bg-soft-zap border-0 mb-5 hover-translate-y-n10">
-                                <div class="d-flex p-5">
-                                    <div>
-                                        <span class="badge badge-warning badge-pill">Web</span>
-                                    </div>
-                                    <div class="pl-4">
-                                        <h5 class="lh-130 text-dark">Assistente pelo navegador</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xl-4 col-sm-6 mt-sm-n7">
-                        <a href="https://t.me/kanribot/" target=_blank>
-                            <div class="card bg-soft-telegram border-0 mb-5 hover-translate-y-n10">
-                                <div class="d-flex p-5">
-                                    <div>
-                                        <span class="badge badge-success badge-pill">Telegram</span>
-                                    </div>
-                                    <div class="pl-4">
-                                        <h5 class="lh-130 text-dark">Assistente pelo Telegram</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xl-4 col-md-12 col-sm-6 mt-xl-n7">
-                        <a href="https://m.me/kanribot/" target=_blank>
-                            <div class="card bg-soft-messenger border-0 mb-5 hover-translate-y-n10">
-                                <div class="d-flex p-5 p">
-                                    <div>
-                                        <span class="badge badge-danger badge-pill">Messenger</span>
-                                    </div>
-                                    <div class="pl-3">
-                                        <h5 class="lh-130 text-dark">Assistente pelo Messenger</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 bg-soft-warning">
+            <div class="card-body pb-5">
+              <div class="pt-4 pb-5">
+                <img src="assets/img/svg/illustrations/explica3.svg" class="img-fluid img-center" style="height: 200px;" alt="Illustration" />
+              </div>
+              <h5 class="h4 lh-130 text-dark mb-3">A gente te lembra
+              </h5>
+              <p class="text-dark opacity-6 mb-0">Enquanto você faz o que realmente importa a gente se encarrega de tratar seus dados e lhe avisar sempre que haver uma data limite ou ocorrências.
+              </p>
             </div>
-        </section>
-
-        <section class="slice slice-cad">
-            <div class="container text-center">
-                <div class="row justify-content-center mt-4">
-                    <div class="col-lg-8">
-                        <!-- Title -->
-                        <h2 class="h1 strong-600">
-                            Para o Investidor
-                        </h2>
-                        <!-- Text -->
-                        <p class="lead text-muted">
-                        Gostou da ideia? Faça parte da revolução financeira junto com a X Æ A-12.<br>Estamos dispostos à aportes financeiros para levar isso adiante.
-                        </p>
-                        <!-- Buttons -->
-                        <div class="mt-5">
-                            <a href="mailto:kanri@frontedu.me" class="btn btn-lg btn-warning px-4">
-                            Mandar um "Oi"
-                        </a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="slice slice-lg bg-section-dark pt-5 pt-lg-8" id="ajudar">
+    <!-- Container -->
+    <div class="container position-relative zindex-100">
+      <div class="col">
+        <div class="row justify-content-center">
+          <div class="col-md-10 text-center">
+            <div class="mt-4 mb-6">
+              <h2 class="h1 text-white">
+                Chega de apenas falar
+              </h2>
+              <h4 class="text-white mt-3">Acesse agora a solução e mude a forma que você enxerga suas antigas planilhas.
+              </h4>
+              <!-- Play button -->
+              <a href="https://youtu.be/hnM-kfOfDsM" target="blank" class="btn btn-warning btn-icon hover-translate-y-n10 mt-4">
+                <span class="btn-inner--icon">
+                  <i data-feather="play">
+                  </i>
+                </span>
+                <span class="btn-inner--text">Demonstração
+                </span>
+              </a>
             </div>
-        </section>
-        <footer class="position-relative" id="footer-main">
-            <div class="footer pt-lg-7 footer-dark bg-dark">
-                <!-- Footer -->
-                <div class="container pt-4">
-                    <div class="row">
-                        <div class="col-lg-4 mb-5 mb-lg-0">
-                            <!-- Theme's logo -->
-                            <a href="/">
-                                <img alt="Image placeholder" src="assets/img/brand/light.svg" id="footer-logo">
-                            </a>
-                            <!-- Somos -->
-                            <p class="mt-4 text-sm opacity-8 pr-lg-4">Gestão em um toque.
-                            </p>             
-                        </div>
-                        <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
-                            <h6 class="heading mb-3">Sobre</h6>
-                            <ul class="list-unstyled">
-                                <li><a href="https://abre.ai/kanridoc/" target="_blank">Documentação</a></li>
-                                <li><a href="mailto:xaeaxii@frontedu.me">Contato</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
-                            <h6 class="heading mb-3">Integração</h6>
-                            <ul class="list-unstyled">
-                                <li><a href="https://t.me/kanribot" target="_blank">Telegram</a></li>
-                                <li><a href="https://m.me/kanribot" target="_blank">Messenger</a></li>
-                                <li><a href="#">WhatsApp</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <hr class="divider divider-fade divider-dark my-footer">
-                    <div class="row align-items-center justify-content-md-between pb-4">
-                        <div class="col-md-6">
-                            <div class="copyright text-sm font-weight-bold text-center text-md-left">
-                                © Desenvolvido com 💚 e bastante ☕ pela <a href="mailto:xaeaxii@frontedu.me" class="font-weight-bold" target="_blank">X Æ A-12</a>.
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                    Termos
-                                </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                    Privacidade
-                                </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                    Cookies
-                                </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                    API
-                                </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="slice pt-0">
+    <div class="container position-relative zindex-100">
+      <div class="row">
+        <div class="col-xl-4 col-sm-6 mt-n7">
+          <a href="https://abre.ai/kanriweb/" target="_blank">
+            <div class="card bg-soft-zap border-0 mb-5 hover-translate-y-n10">
+              <div class="d-flex p-5">
+                <div>
+                  <span class="badge badge-warning badge-pill">Web
+                  </span>
                 </div>
+                <div class="pl-4">
+                  <h5 class="lh-130 text-dark">Assistente pelo navegador
+                  </h5>
+                </div>
+              </div>
             </div>
-        </footer>
-        <!-- Core JS  -->
-        <script src="assets/libs/jquery/dist/jquery.min.js"></script>
-        <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/libs/svg-injector/dist/svg-injector.min.js"></script>
-        <script src="assets/libs/feather-icons/dist/feather.min.js"></script>
-        <!-- Quick JS -->
-        <script src="assets/js/meiajuda.js"></script>
-        <!-- Feather Icons -->
-        <script>
-            feather.replace({
-                'width': '1em',
-                'height': '1em'
-            })
-        </script>
-        <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
-        </script>
-<script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
-</script>
-<script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
-</script>
-<script>
+          </a>
+        </div>
+        <div class="col-xl-4 col-sm-6 mt-sm-n7">
+          <a href="https://t.me/kanribot/" target=_blank>
+            <div class="card bg-soft-telegram border-0 mb-5 hover-translate-y-n10">
+              <div class="d-flex p-5">
+                <div>
+                  <span class="badge badge-success badge-pill">Telegram
+                  </span>
+                </div>
+                <div class="pl-4">
+                  <h5 class="lh-130 text-dark">Assistente pelo Telegram
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-xl-4 col-md-12 col-sm-6 mt-xl-n7">
+          <a href="https://m.me/kanribot/" target=_blank>
+            <div class="card bg-soft-messenger border-0 mb-5 hover-translate-y-n10">
+              <div class="d-flex p-5 p">
+                <div>
+                  <span class="badge badge-danger badge-pill">Messenger
+                  </span>
+                </div>
+                <div class="pl-3">
+                  <h5 class="lh-130 text-dark">Assistente pelo Messenger
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="slice slice-cad">
+    <div class="container text-center">
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-8">
+          <!-- Title -->
+          <h2 class="h1 strong-600">
+            Para o Investidor
+          </h2>
+          <!-- Text -->
+          <p class="lead text-muted">
+            Gostou da ideia? Faça parte da revolução financeira junto com a X Æ A-12.
+            <br>Estamos dispostos à aportes financeiros para levar isso adiante.
+          </p>
+          <!-- Buttons -->
+          <div class="mt-5">
+            <a href="mailto:kanri@frontedu.me" class="btn btn-lg btn-warning px-4">
+              Mandar um "Oi"
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="position-relative" id="footer-main">
+    <div class="footer pt-lg-7 footer-dark bg-dark">
+      <!-- Footer -->
+      <div class="container pt-4">
+        <div class="row">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <!-- Theme's logo -->
+            <a href="/">
+              <img alt="Image placeholder" src="assets/img/brand/light.svg" id="footer-logo">
+            </a>
+            <!-- Somos -->
+            <p class="mt-4 text-sm opacity-8 pr-lg-4">Gestão em um toque.
+            </p>             
+          </div>
+          <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
+            <h6 class="heading mb-3">Sobre
+            </h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://abre.ai/kanridoc/" target="_blank">Documentação
+                </a>
+              </li>
+              <li>
+                <a href="mailto:kanri@frontedu.me">Contato
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
+            <h6 class="heading mb-3">Integração
+            </h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://t.me/kanribot" target="_blank">Telegram
+                </a>
+              </li>
+              <li>
+                <a href="https://m.me/kanribot" target="_blank">Messenger
+                </a>
+              </li>
+              <li>
+                <a href="#">WhatsApp
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="divider divider-fade divider-dark my-footer">
+        <div class="row align-items-center justify-content-md-between pb-4">
+          <div class="col-md-6">
+            <div class="copyright text-sm font-weight-bold text-center text-md-left">
+              © Desenvolvido com 💚 e bastante ☕ pela 
+              <a href="mailto:kanri@frontedu.me" class="font-weight-bold" target="_blank">X Æ A-12
+              </a>.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  Termos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  Privacidade
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  Cookies
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  API
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Core JS  -->
+  <script src="assets/libs/jquery/dist/jquery.min.js">
+  </script>
+  <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="assets/libs/svg-injector/dist/svg-injector.min.js">
+  </script>
+  <script src="assets/libs/feather-icons/dist/feather.min.js">
+  </script>
+  <!-- Quick JS -->
+  <script src="assets/js/meiajuda.js">
+  </script>
+  <!-- Feather Icons -->
+  <script>
+    feather.replace({
+      'width': '1em',
+      'height': '1em'
+    }
+                   )
+  </script>
+  <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+  </script>
+  <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+  </script>
+  <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+  </script>
+  <script>
     (function () {
-        window.onload = function () {
-            new BlipChat()
-            .withAppKey('bmVnb25leTphN2MwN2IzMy02ZjEyLTRmMTEtODI0NC05ODcyYjAzYWQyNDY=')
-            .withButton({"color":"#E01A4F","icon":""})
-            .withCustomCommonUrl('https://chat.blip.ai/')
-            .build();
-        }
-    })();
-</script>
-</body>
-
+      window.onload = function () {
+        new BlipChat()
+          .withAppKey('bmVnb25leTphN2MwN2IzMy02ZjEyLTRmMTEtODI0NC05ODcyYjAzYWQyNDY=')
+          .withButton({
+          "color":"#E01A4F","icon":""}
+                     )
+          .withCustomCommonUrl('https://chat.blip.ai/')
+          .build();
+      }
+    }
+    )();
+  </script>
+  </body>
 </html>
