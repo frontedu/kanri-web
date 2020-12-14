@@ -1,2 +1,2 @@
-# kanri
+# kanri.vercel.app
  
