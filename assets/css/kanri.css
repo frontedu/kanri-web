@@ -2770,7 +2770,7 @@ a.bg-translucent-secondary:hover,a.bg-translucent-secondary:focus,button.bg-tran
 a.bg-light-success:hover,a.bg-light-success:focus,button.bg-light-success:hover,button.bg-light-success:focus{background-color:#5cc9a7!important}
 .bg-dark-success{background-color:#3cb690!important}
 a.bg-dark-success:hover,a.bg-dark-success:focus,button.bg-dark-success:hover,button.bg-dark-success:focus{background-color:#308f72!important}
-.bg-soft-success{background-color:#FDEBED}
+.bg-soft-success{background-color:#FFEEFE}
 .bg-gradient-success{background:linear-gradient(50deg,#5cc9a7 0,#5cc9c8 100%)!important}
 .bg-translucent-success{background-color:rgba(65,192,153,.6)!important}
 a.bg-translucent-success:hover,a.bg-translucent-success:focus,button.bg-translucent-success:hover,button.bg-translucent-success:focus{background-color:rgba(58,174,138,.6)!important}
@@ -2786,7 +2786,7 @@ a.bg-translucent-info:hover,a.bg-translucent-info:focus,button.bg-translucent-in
 a.bg-light-warning:hover,a.bg-light-warning:focus,button.bg-light-warning:hover,button.bg-light-warning:focus{background-color:#ffbe3d!important}
 .bg-dark-warning{background-color:#ffad0a!important}
 a.bg-dark-warning:hover,a.bg-dark-warning:focus,button.bg-dark-warning:hover,button.bg-dark-warning:focus{background-color:#d68e00!important}
-.bg-soft-warning{background-color:#fff7e8}
+.bg-soft-warning{background-color:#ECF5FF}
 .bg-soft-chat{background-color:#fff}
 .bg-soft-telegram{background-color:#fff}
 .bg-soft-messenger{background-color:#fff}
@@ -2797,7 +2797,7 @@ a.bg-translucent-warning:hover,a.bg-translucent-warning:focus,button.bg-transluc
 a.bg-light-danger:hover,a.bg-light-danger:focus,button.bg-light-danger:hover,button.bg-light-danger:focus{background-color:#f25767!important}
 .bg-dark-danger{background-color:#ee283c!important}
 a.bg-dark-danger:hover,a.bg-dark-danger:focus,button.bg-dark-danger:hover,button.bg-dark-danger:focus{background-color:#d31024!important}
-.bg-soft-danger{background-color:#EBF9F4}
+.bg-soft-danger{background-color:#E9FFF0}
 .bg-gradient-danger{background:linear-gradient(50deg,#f25767 0,#f27657 100%)!important}
 .bg-translucent-danger{background-color:rgba(239,54,73,.6)!important}
 a.bg-translucent-danger:hover,a.bg-translucent-danger:focus,button.bg-translucent-danger:hover,button.bg-translucent-danger:focus{background-color:rgba(238,30,52,.6)!important}
